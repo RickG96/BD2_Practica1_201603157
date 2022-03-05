@@ -1,9 +1,13 @@
 USE [master]
 GO
-/****** Object:  Database [BD2]    Script Date: 21/02/2022 19:32:35 ******/
-CREATE DATABASE BD2
-GO
-USE BD2
+/****** Object:  Database [BD2]    Script Date: 3/5/2022 1:49:02 PM ******/
+CREATE DATABASE [BD2]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'BD2', FILENAME = N'/var/opt/mssql/data/BD2.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'BD2_log', FILENAME = N'/var/opt/mssql/data/BD2_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
 GO
 ALTER DATABASE [BD2] SET COMPATIBILITY_LEVEL = 150
 GO
@@ -78,10 +82,10 @@ ALTER DATABASE [BD2] SET QUERY_STORE = OFF
 GO
 USE [BD2]
 GO
-/****** Object:  Schema [practica1]    Script Date: 21/02/2022 19:32:35 ******/
+/****** Object:  Schema [practica1]    Script Date: 3/5/2022 1:49:04 PM ******/
 CREATE SCHEMA [practica1]
 GO
-/****** Object:  Table [dbo].[__EFMigrationsHistory]    Script Date: 21/02/2022 19:32:35 ******/
+/****** Object:  Table [dbo].[__EFMigrationsHistory]    Script Date: 3/5/2022 1:49:04 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -95,7 +99,7 @@ CREATE TABLE [dbo].[__EFMigrationsHistory](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [practica1].[Course]    Script Date: 21/02/2022 19:32:35 ******/
+/****** Object:  Table [practica1].[Course]    Script Date: 3/5/2022 1:49:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -110,7 +114,7 @@ CREATE TABLE [practica1].[Course](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [practica1].[CourseAssignment]    Script Date: 21/02/2022 19:32:35 ******/
+/****** Object:  Table [practica1].[CourseAssignment]    Script Date: 3/5/2022 1:49:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -125,7 +129,7 @@ CREATE TABLE [practica1].[CourseAssignment](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [practica1].[CourseTutor]    Script Date: 21/02/2022 19:32:35 ******/
+/****** Object:  Table [practica1].[CourseTutor]    Script Date: 3/5/2022 1:49:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -140,7 +144,7 @@ CREATE TABLE [practica1].[CourseTutor](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [practica1].[HistoryLog]    Script Date: 21/02/2022 19:32:35 ******/
+/****** Object:  Table [practica1].[HistoryLog]    Script Date: 3/5/2022 1:49:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -155,7 +159,7 @@ CREATE TABLE [practica1].[HistoryLog](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [practica1].[Notification]    Script Date: 21/02/2022 19:32:35 ******/
+/****** Object:  Table [practica1].[Notification]    Script Date: 3/5/2022 1:49:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -171,7 +175,7 @@ CREATE TABLE [practica1].[Notification](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [practica1].[ProfileStudent]    Script Date: 21/02/2022 19:32:35 ******/
+/****** Object:  Table [practica1].[ProfileStudent]    Script Date: 3/5/2022 1:49:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -186,7 +190,7 @@ CREATE TABLE [practica1].[ProfileStudent](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [practica1].[Roles]    Script Date: 21/02/2022 19:32:35 ******/
+/****** Object:  Table [practica1].[Roles]    Script Date: 3/5/2022 1:49:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -200,7 +204,7 @@ CREATE TABLE [practica1].[Roles](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [practica1].[TFA]    Script Date: 21/02/2022 19:32:35 ******/
+/****** Object:  Table [practica1].[TFA]    Script Date: 3/5/2022 1:49:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -216,7 +220,7 @@ CREATE TABLE [practica1].[TFA](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [practica1].[TutorProfile]    Script Date: 21/02/2022 19:32:35 ******/
+/****** Object:  Table [practica1].[TutorProfile]    Script Date: 3/5/2022 1:49:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -231,7 +235,7 @@ CREATE TABLE [practica1].[TutorProfile](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [practica1].[UsuarioRole]    Script Date: 21/02/2022 19:32:35 ******/
+/****** Object:  Table [practica1].[UsuarioRole]    Script Date: 3/5/2022 1:49:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -247,7 +251,7 @@ CREATE TABLE [practica1].[UsuarioRole](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [practica1].[Usuarios]    Script Date: 21/02/2022 19:32:35 ******/
+/****** Object:  Table [practica1].[Usuarios]    Script Date: 3/5/2022 1:49:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -267,72 +271,61 @@ CREATE TABLE [practica1].[Usuarios](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-INSERT [dbo].[__EFMigrationsHistory] ([MigrationId], [ProductVersion]) VALUES (N'20220220204647_InitMigration', N'6.0.2')
-GO
-INSERT [practica1].[Course] ([CodCourse], [Name], [CreditsRequired]) VALUES (283, N'Análisis y Diseño de Sistemas 1', 30)
-INSERT [practica1].[Course] ([CodCourse], [Name], [CreditsRequired]) VALUES (772, N'Estructura de Datos', 15)
-INSERT [practica1].[Course] ([CodCourse], [Name], [CreditsRequired]) VALUES (775, N'Sistemas de Bases de Datos 2', 25)
-INSERT [practica1].[Course] ([CodCourse], [Name], [CreditsRequired]) VALUES (964, N'Organización Computacional', 10)
-INSERT [practica1].[Course] ([CodCourse], [Name], [CreditsRequired]) VALUES (970, N'Redes de Computadoras 1', 20)
-GO
-INSERT [practica1].[Roles] ([Id], [RoleName]) VALUES (N'2cf8e1cf-3cd6-44f3-8f86-1386b7c17657', N'Tutor')
-INSERT [practica1].[Roles] ([Id], [RoleName]) VALUES (N'f4e6d8fb-df45-4c91-9794-38e043fd5acd', N'Student')
-GO
-/****** Object:  Index [IX_CourseAssignment_CourseCodCourse]    Script Date: 21/02/2022 19:32:36 ******/
+/****** Object:  Index [IX_CourseAssignment_CourseCodCourse]    Script Date: 3/5/2022 1:49:05 PM ******/
 CREATE NONCLUSTERED INDEX [IX_CourseAssignment_CourseCodCourse] ON [practica1].[CourseAssignment]
 (
 	[CourseCodCourse] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_CourseAssignment_StudentId]    Script Date: 21/02/2022 19:32:36 ******/
+/****** Object:  Index [IX_CourseAssignment_StudentId]    Script Date: 3/5/2022 1:49:05 PM ******/
 CREATE NONCLUSTERED INDEX [IX_CourseAssignment_StudentId] ON [practica1].[CourseAssignment]
 (
 	[StudentId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_CourseTutor_CourseCodCourse]    Script Date: 21/02/2022 19:32:36 ******/
+/****** Object:  Index [IX_CourseTutor_CourseCodCourse]    Script Date: 3/5/2022 1:49:05 PM ******/
 CREATE NONCLUSTERED INDEX [IX_CourseTutor_CourseCodCourse] ON [practica1].[CourseTutor]
 (
 	[CourseCodCourse] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_CourseTutor_TutorId]    Script Date: 21/02/2022 19:32:36 ******/
+/****** Object:  Index [IX_CourseTutor_TutorId]    Script Date: 3/5/2022 1:49:05 PM ******/
 CREATE NONCLUSTERED INDEX [IX_CourseTutor_TutorId] ON [practica1].[CourseTutor]
 (
 	[TutorId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Notification_UserId]    Script Date: 21/02/2022 19:32:36 ******/
+/****** Object:  Index [IX_Notification_UserId]    Script Date: 3/5/2022 1:49:05 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Notification_UserId] ON [practica1].[Notification]
 (
 	[UserId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ProfileStudent_UserId]    Script Date: 21/02/2022 19:32:36 ******/
+/****** Object:  Index [IX_ProfileStudent_UserId]    Script Date: 3/5/2022 1:49:05 PM ******/
 CREATE NONCLUSTERED INDEX [IX_ProfileStudent_UserId] ON [practica1].[ProfileStudent]
 (
 	[UserId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_TFA_UserId]    Script Date: 21/02/2022 19:32:36 ******/
+/****** Object:  Index [IX_TFA_UserId]    Script Date: 3/5/2022 1:49:05 PM ******/
 CREATE NONCLUSTERED INDEX [IX_TFA_UserId] ON [practica1].[TFA]
 (
 	[UserId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_TutorProfile_UserId]    Script Date: 21/02/2022 19:32:36 ******/
+/****** Object:  Index [IX_TutorProfile_UserId]    Script Date: 3/5/2022 1:49:05 PM ******/
 CREATE NONCLUSTERED INDEX [IX_TutorProfile_UserId] ON [practica1].[TutorProfile]
 (
 	[UserId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_UsuarioRole_RoleId]    Script Date: 21/02/2022 19:32:36 ******/
+/****** Object:  Index [IX_UsuarioRole_RoleId]    Script Date: 3/5/2022 1:49:05 PM ******/
 CREATE NONCLUSTERED INDEX [IX_UsuarioRole_RoleId] ON [practica1].[UsuarioRole]
 (
 	[RoleId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_UsuarioRole_UserId]    Script Date: 21/02/2022 19:32:36 ******/
+/****** Object:  Index [IX_UsuarioRole_UserId]    Script Date: 3/5/2022 1:49:05 PM ******/
 CREATE NONCLUSTERED INDEX [IX_UsuarioRole_UserId] ON [practica1].[UsuarioRole]
 (
 	[UserId] ASC
